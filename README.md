@@ -11,7 +11,7 @@ For example, the file `.17969.otf` becomes `MinionPro-BoldCnItCapt.otf` (which i
 
 ## Demo
 <p align="center">
-  <img src="adobe-font-revealer.gif" width="450" />
+  <img src="https://i.imgur.com/A0q01oT.gif" width="450" />
 </p>
 
 ## Execution
@@ -20,12 +20,12 @@ You need to have `lcdf-typetools` installed (< 1mb). If you have `texlive` insta
 1. Install `lcdf-typetools`
   - Enable WSL (Windows Subsystem for Linux) in Windows Settings/Control Panel (Reboot necesary)
   - Open cmd/powershell and run the following commands:
-      bash
-      sudo apt-get update
-      sudo apt-get install -y lcdf-typetools`
+    -  bash
+    -  sudo apt-get update
+    -  sudo apt-get install -y lcdf-typetools`
 2. Go to the folder where the reveal.sh script is located and Shift+right click in empty space, choose "Open Linux shell here" in context menu.
    Then run the script using the following command: 
-      bash reveal.sh
+    -  bash reveal.sh
 3. The script will ask you to choose if you are using a Microsoft account or a Local account for your Windows user.
    In Windows 10, microsoft account will use the first 5 characters of your email address as the name of your "C:\Users\%username%" folder, not matching the real username.
    If using microsoft acc, choose option 1.
