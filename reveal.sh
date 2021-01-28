@@ -1,33 +1,26 @@
 #!/bin/sh
 
-echo "❦ Font Revealer for Adobe Creative Cloud ❦"
+echo "Font Revealer for Adobe Creative Cloud (Windows Version)"
 
-echo "Dry-Run will preview the renaming process without copy any files."
-select dce in "Dry-Run" "Copy" "Exit"; do
-    case $dce in
-        Dry-Run ) isDry=true; echo "Dry-running..."; break;;
-        Copy ) isDry=false; echo "Copy & rename files..."; break;;
-        Exit ) exit;;
-    esac
-done
+cd /mnt/c/Users/$USER/AppData/Roaming/Adobe/CoreSync/plugins/livetype/r/
 
-cd $HOME/Library/Application\ Support/Adobe/CoreSync/plugins/livetype/.r/
+for file in *
 
-# grab all otf dot files (adjust to your needs)
-for file in .*.otf
 do  
+
   # the "Postscript name:" does not contain spaces. good for file names.
   fontName=`otfinfo --info ${file} | fgrep "PostScript name:" | grep -oE "[^ ]+$"`
   
-  if [ "$isDry" = false ] ; then
-    # create a FONT dir within downloads, if there is none
-    mkdir -p $HOME/Downloads/FONTS/
-    # copy files (if no dry-run)
-    cp $file "$HOME/Downloads/FONTS/$fontName.otf"
-  fi
-
+  # create a FONT dir within downloads, if there is none
+  mkdir -p /mnt/c/Users/$USER/Downloads/FONTS/
+  
+  # copy files
+  cp $file "/mnt/c/Users/$USER/Downloads/FONTS/$fontName.otf"
+  
   # echo changes:
   echo "$file\t⮕\t$fontName.otf"
+  
 done
 
-echo "🚀 DONE! Check your 'FONTS' directory within Downloads if you selected Option 2 (Copy)".
+echo "DONE! All fonts downloaded to C:/User/$USER/Downloads/FONTS".
+
